@@ -5,7 +5,7 @@ const regd_users = express.Router();
 
 let users = [];
 
-const doseExist = (username) => {
+const doesExist = (username) => {
   let userwithsamename = users.filter((user) => user.username === username);
   if (userwithsamename.length > 0) {
     return true;
@@ -74,5 +74,5 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
 });
 
 module.exports.authenticated = regd_users;
-module.exports.doseExist = doseExist;
+module.exports.doesExist = doesExist;
 module.exports.users = users;
